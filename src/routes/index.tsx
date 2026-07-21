@@ -40,18 +40,22 @@ function Home() {
       <AppHeader />
 
       {/* Hero */}
-      <section className="gradient-hero border-b">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+      <section
+        className="relative overflow-hidden border-b bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBgAsset.url})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full border bg-background/70 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur">
               <Sparkles className="h-3 w-3" /> Terrasse • Bar • Chambre • Mini-bar
             </span>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Vos boissons préférées,
               <br />
               livrées où vous êtes.
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-lg text-white/80 sm:text-xl">
               Parcourez la carte, composez votre commande, on s'occupe du reste.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -63,7 +67,7 @@ function Home() {
               </a>
               <Link
                 to="/auth"
-                className="inline-flex items-center gap-2 rounded-xl border bg-background px-5 py-3 text-sm font-semibold hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/20"
               >
                 Créer un compte
               </Link>
