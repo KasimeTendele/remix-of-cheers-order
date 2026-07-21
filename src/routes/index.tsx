@@ -71,6 +71,16 @@ function Home() {
         </div>
       </section>
 
+      <Section title="Découvrez par catégorie" icon={<Sparkles className="h-4 w-4" />}>
+        <div className="space-y-6">
+          {categories.map((c) => {
+            const list = products.filter((p) => p.categoryId === c.id);
+            if (list.length === 0) return null;
+            return <CategoryCarousel key={c.id} category={c} products={list} />;
+          })}
+        </div>
+      </Section>
+
       {/* Promotions */}
       {promos.length > 0 && (
         <Section title="Promotions & offres" icon={<Tag className="h-4 w-4" />}>
@@ -106,16 +116,6 @@ function Home() {
           </Section>
         )}
       </div>
-
-      <Section title="Découvrez par catégorie" icon={<Sparkles className="h-4 w-4" />}>
-        <div className="space-y-6">
-          {categories.map((c) => {
-            const list = products.filter((p) => p.categoryId === c.id);
-            if (list.length === 0) return null;
-            return <CategoryCarousel key={c.id} category={c} products={list} />;
-          })}
-        </div>
-      </Section>
 
       <footer className="border-t py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Omar Drinks — Démo locale
