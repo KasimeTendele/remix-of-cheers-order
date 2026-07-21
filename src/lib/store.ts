@@ -16,7 +16,7 @@ export interface Product {
   id: string;
   name: string;
   categoryId: string;
-  price: number; // in EUR
+  price: number; // in USD
   description?: string;
   image?: string;
   stock?: number;

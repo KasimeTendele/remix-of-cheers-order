@@ -50,7 +50,7 @@ function CartPage() {
                   <div className="min-w-0 flex-1">
                     <div className="truncate font-medium">{l.product.name}</div>
                     <div className="text-sm text-muted-foreground">
-                      {l.product.price.toFixed(2)} € × {l.qty}
+                      ${l.product.price.toFixed(2)} × {l.qty}
                     </div>
                   </div>
                   <div className="flex items-center gap-1 rounded-lg border p-1">
@@ -81,7 +81,7 @@ function CartPage() {
             <div className="mt-6 rounded-2xl border bg-card p-5 shadow-soft">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Total</span>
-                <span className="text-2xl font-bold">{total.toFixed(2)} €</span>
+                <span className="text-2xl font-bold">${total.toFixed(2)}</span>
               </div>
               <Link
                 to="/checkout"

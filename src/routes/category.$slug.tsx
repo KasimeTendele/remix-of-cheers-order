@@ -2,9 +2,9 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { AppHeader } from "@/components/AppHeader";
 import { ProductImage } from "@/components/ProductImage";
 import { CategoryIcon } from "@/components/CategoryIcon";
-import { useCategories, useProducts, useCartActions } from "@/lib/store-hooks";
-import { ArrowLeft, Plus } from "lucide-react";
-import { toast } from "sonner";
+import { ProductAddToCart } from "@/components/ProductAddToCart";
+import { useCategories, useProducts } from "@/lib/store-hooks";
+import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/category/$slug")({
   component: CategoryPage,
@@ -14,7 +14,6 @@ function CategoryPage() {
   const { slug } = Route.useParams();
   const categories = useCategories();
   const products = useProducts();
-  const { add } = useCartActions();
 
   const cat = categories.find((c) => c.slug === slug);
   if (categories.length > 0 && !cat) throw notFound();
@@ -59,17 +58,8 @@ function CategoryPage() {
                 {p.description && (
                   <p className="mt-1 text-sm text-muted-foreground">{p.description}</p>
                 )}
-                <div className="mt-auto flex items-center justify-between pt-4">
-                  <span className="text-lg font-bold text-primary">{p.price.toFixed(2)} €</span>
-                  <button
-                    onClick={() => {
-                      add(p.id, 1);
-                      toast.success(`${p.name} ajouté au panier`);
-                    }}
-                    className="inline-flex items-center gap-1 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
-                  >
-                    <Plus className="h-4 w-4" /> Ajouter
-                  </button>
+                <div className="mt-auto pt-4">
+                  <ProductAddToCart productId={p.id} productName={p.name} price={p.price} />
                 </div>
               </div>
             ))}

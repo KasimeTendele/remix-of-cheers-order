@@ -60,7 +60,7 @@ export function CategoryCarousel({
               </div>
               <div className="mt-2 truncate text-sm font-medium">{p.name}</div>
               <div className="text-xs font-semibold text-primary">
-                {p.price.toFixed(2)} €
+                ${p.price.toFixed(2)}
               </div>
             </Link>
           ))}

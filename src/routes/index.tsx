@@ -50,10 +50,9 @@ function Home() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur">
               <Sparkles className="h-3 w-3" /> Terrasse • Bar • Chambre • Mini-bar
             </span>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Vos boissons préférées,
-              <br />
-              livrées où vous êtes.
+            <h1 className="mt-4 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <span className="block whitespace-nowrap">Vos boissons préférées,</span>
+              <span className="block whitespace-nowrap">livrées où vous êtes.</span>
             </h1>
             <p className="mt-4 text-lg text-white/80 sm:text-xl">
               Parcourez la carte, composez votre commande, on s'occupe du reste.
@@ -198,7 +197,7 @@ function ProductMini({ name, price, image }: { name: string; price: number; imag
         <ProductImage image={image} alt={name} fallbackSize="text-4xl" />
       </div>
       <div className="text-sm font-semibold">{name}</div>
-      <div className="mt-1 text-sm text-primary">{price.toFixed(2)} €</div>
+      <div className="mt-1 text-sm text-primary">${price.toFixed(2)}</div>
     </div>
   );
 }

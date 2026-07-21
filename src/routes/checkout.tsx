@@ -85,11 +85,11 @@ function Checkout() {
 
     // Build WhatsApp message
     const linesText = lines
-      .map((l) => `• ${l.qty}× ${l.name} — ${(l.price * l.qty).toFixed(2)}€`)
+      .map((l) => `• ${l.qty}× ${l.name} — $${(l.price * l.qty).toFixed(2)}`)
       .join("\n");
     const msg = `🛎️ Nouvelle commande #${order.id}\n\n👤 ${user!.name} (${user!.email})\n📍 ${location}${
       room ? ` — ${room}` : ""
-    }\n\n${linesText}\n\n💰 Total: ${total.toFixed(2)}€${note ? `\n\n📝 ${note}` : ""}`;
+    }\n\n${linesText}\n\n💰 Total: $${total.toFixed(2)}${note ? `\n\n📝 ${note}` : ""}`;
 
     clear();
     toast.success("Commande envoyée !");
@@ -154,13 +154,13 @@ function Checkout() {
                   <span>
                     {l.qty}× {l.name}
                   </span>
-                  <span className="font-medium">{(l.price * l.qty).toFixed(2)} €</span>
+                  <span className="font-medium">${(l.price * l.qty).toFixed(2)}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-3 flex justify-between border-t pt-3 text-base font-bold">
               <span>Total</span>
-              <span>{total.toFixed(2)} €</span>
+              <span>${total.toFixed(2)}</span>
             </div>
           </div>
 

@@ -62,13 +62,13 @@ function MyOrders() {
                       <span>
                         {it.qty}× {it.name}
                       </span>
-                      <span>{(it.price * it.qty).toFixed(2)} €</span>
+                      <span>${(it.price * it.qty).toFixed(2)}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-3 flex justify-between border-t pt-3 font-bold">
                   <span>Total</span>
-                  <span>{o.total.toFixed(2)} €</span>
+                  <span>${o.total.toFixed(2)}</span>
                 </div>
               </li>
             ))}
