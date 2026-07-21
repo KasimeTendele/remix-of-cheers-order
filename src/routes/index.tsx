@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Le Comptoir — Réservez vos boissons" },
+      { title: "Omar Drinks — Réservez vos boissons" },
       {
         name: "description",
         content:
@@ -118,7 +118,7 @@ function Home() {
       </Section>
 
       <footer className="border-t py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Le Comptoir — Démo locale
+        © {new Date().getFullYear()} Omar Drinks — Démo locale
       </footer>
     </div>
   );

@@ -15,7 +15,7 @@ export function AppHeader() {
           <div className="grid h-9 w-9 place-items-center rounded-xl gradient-accent text-primary-foreground shadow-soft">
             <Wine className="h-4 w-4" />
           </div>
-          <span className="text-lg tracking-tight">Le Comptoir</span>
+          <span className="text-lg tracking-tight">Omar Drinks</span>
         </Link>
         <nav className="ml-auto flex items-center gap-1">
           {user?.role === "admin" && (

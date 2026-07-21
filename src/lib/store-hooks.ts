@@ -56,7 +56,7 @@ export function useUsers(): User[] {
 export function useSettings(): Settings {
   useStoreVersion();
   return typeof window === "undefined"
-    ? { whatsappNumber: "", businessName: "Le Comptoir" }
+    ? { whatsappNumber: "", businessName: "Omar Drinks" }
     : getSettings();
 }
 export function useCurrentUser(): User | null {
