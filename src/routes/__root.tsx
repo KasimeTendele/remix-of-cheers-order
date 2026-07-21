@@ -79,10 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Le Comptoir — Réservez vos boissons" },
+      { title: "Omar Drinks — Réservez vos boissons" },
       { name: "description", content: "Application mobile de réservation de boissons pour terrasse, bar, hôtel et mini-bar." },
-      { name: "author", content: "Le Comptoir" },
-      { property: "og:title", content: "Le Comptoir — Réservez vos boissons" },
+      { name: "author", content: "Omar Drinks" },
+      { property: "og:title", content: "Omar Drinks — Réservez vos boissons" },
       { property: "og:description", content: "Commandez vos boissons depuis votre table ou chambre en quelques clics." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

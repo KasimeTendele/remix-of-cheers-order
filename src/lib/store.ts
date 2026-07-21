@@ -185,7 +185,7 @@ export function ensureSeed() {
     const users: User[] = [
       { email: "admin@bar.app", name: "Administrateur", password: "admin", role: "admin" },
     ];
-    const settings: Settings = { whatsappNumber: "33612345678", businessName: "Le Comptoir" };
+    const settings: Settings = { whatsappNumber: "33612345678", businessName: "Omar Drinks" };
 
     write(K.categories, categories);
     write(K.products, products);
@@ -226,7 +226,7 @@ export const setUsers = (v: User[]) => write(K.users, v);
 export const getSession = () => read<{ email: string } | null>(K.session, null);
 export const setSession = (v: { email: string } | null) => write(K.session, v);
 export const getSettings = () =>
-  read<Settings>(K.settings, { whatsappNumber: "", businessName: "Le Comptoir" });
+  read<Settings>(K.settings, { whatsappNumber: "", businessName: "Omar Drinks" });
 export const setSettings = (v: Settings) => write(K.settings, v);
 export const getCart = () => read<CartItem[]>(K.cart, []);
 export const setCart = (v: CartItem[]) => write(K.cart, v);
