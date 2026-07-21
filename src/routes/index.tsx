@@ -5,6 +5,7 @@ import { CategoryIcon } from "@/components/CategoryIcon";
 import { CategoryCarousel } from "@/components/CategoryCarousel";
 import { useCategories, useProducts } from "@/lib/store-hooks";
 import { Sparkles, Tag, ArrowRight } from "lucide-react";
+import heroBgAsset from "@/assets/hero-bg.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
