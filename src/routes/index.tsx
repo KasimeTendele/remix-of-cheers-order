@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppHeader } from "@/components/AppHeader";
 import { ProductImage } from "@/components/ProductImage";
 import { CategoryIcon } from "@/components/CategoryIcon";
+import { CategoryCarousel } from "@/components/CategoryCarousel";
 import { useCategories, useProducts } from "@/lib/store-hooks";
 import { Sparkles, Tag, ArrowRight } from "lucide-react";
 
