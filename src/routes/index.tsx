@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppHeader } from "@/components/AppHeader";
 import { ProductImage } from "@/components/ProductImage";
 import { CategoryIcon } from "@/components/CategoryIcon";
+import { CategoryCarousel } from "@/components/CategoryCarousel";
 import { useCategories, useProducts } from "@/lib/store-hooks";
 import { Sparkles, Tag, ArrowRight } from "lucide-react";
 
@@ -106,22 +107,12 @@ function Home() {
         )}
       </div>
 
-      <Section title="Toutes les boissons" icon={<Sparkles className="h-4 w-4" />}>
-        <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-          {products.map((p) => {
-            const cat = categories.find((c) => c.id === p.categoryId);
-            return cat ? (
-              <Link
-                key={p.id}
-                to="/category/$slug"
-                params={{ slug: cat.slug }}
-                className="block transition hover:-translate-y-0.5"
-              >
-                <ProductMini name={p.name} price={p.price} image={p.image} />
-              </Link>
-            ) : (
-              <ProductMini key={p.id} name={p.name} price={p.price} image={p.image} />
-            );
+      <Section title="Découvrez par catégorie" icon={<Sparkles className="h-4 w-4" />}>
+        <div className="space-y-6">
+          {categories.map((c) => {
+            const list = products.filter((p) => p.categoryId === c.id);
+            if (list.length === 0) return null;
+            return <CategoryCarousel key={c.id} category={c} products={list} />;
           })}
         </div>
       </Section>
