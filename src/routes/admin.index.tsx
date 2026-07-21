@@ -35,7 +35,7 @@ function AdminOrders() {
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="Commandes" value={stats.total.toString()} />
         <Stat label="En attente" value={stats.pending.toString()} />
-        <Stat label="Chiffre d'affaires" value={`${stats.revenue.toFixed(2)} €`} />
+        <Stat label="Chiffre d'affaires" value={`$${stats.revenue.toFixed(2)}`} />
       </div>
 
       <h2 className="mt-8 text-lg font-semibold">Toutes les commandes</h2>
@@ -82,13 +82,13 @@ function AdminOrders() {
                 {o.items.map((it) => (
                   <li key={it.productId} className="flex justify-between py-1.5">
                     <span>{it.qty}× {it.name}</span>
-                    <span>{(it.price * it.qty).toFixed(2)} €</span>
+                    <span>${(it.price * it.qty).toFixed(2)}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-2 flex justify-between border-t pt-2 font-bold">
                 <span>Total</span>
-                <span>{o.total.toFixed(2)} €</span>
+                <span>${o.total.toFixed(2)}</span>
               </div>
             </li>
           ))}
