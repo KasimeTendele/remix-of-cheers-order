@@ -80,12 +80,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Omar Drinks — Réservez vos boissons" },
-      { name: "description", content: "Application mobile de réservation de boissons pour terrasse, bar, hôtel et mini-bar." },
+      { name: "description", content: "Commandez vos boissons depuis votre terrasse, chambre, bar ou mini-bar. Whisky, vins, cocktails, sans-alcool et plus." },
       { name: "author", content: "Omar Drinks" },
       { property: "og:title", content: "Omar Drinks — Réservez vos boissons" },
-      { property: "og:description", content: "Commandez vos boissons depuis votre table ou chambre en quelques clics." },
+      { property: "og:description", content: "Commandez vos boissons depuis votre terrasse, chambre, bar ou mini-bar. Whisky, vins, cocktails, sans-alcool et plus." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Omar Drinks — Réservez vos boissons" },
+      { name: "twitter:description", content: "Commandez vos boissons depuis votre terrasse, chambre, bar ou mini-bar. Whisky, vins, cocktails, sans-alcool et plus." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/29a6ba50-8bb4-407a-8766-5551dd623c39/id-preview-d3c70c19--287c9526-bac3-4f39-ab5c-2abb395b510d.lovable.app-1784660892041.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/29a6ba50-8bb4-407a-8766-5551dd623c39/id-preview-d3c70c19--287c9526-bac3-4f39-ab5c-2abb395b510d.lovable.app-1784660892041.png" },
     ],
     links: [
       {
